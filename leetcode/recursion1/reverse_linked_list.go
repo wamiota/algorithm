@@ -1,13 +1,17 @@
 package recursion1
 
-func reverseList(head *ListNode) *ListNode {
+import (
+	"algorithm/leetcode/structure"
+)
+
+func reverseList(head *structure.ListNode) *structure.ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
 	return reverseListRecursive(head, nil, head.Next)
 }
 
-func reverseListRecursive(node *ListNode, prev *ListNode, next *ListNode) *ListNode {
+func reverseListRecursive(node *structure.ListNode, prev *structure.ListNode, next *structure.ListNode) *structure.ListNode {
 	if node.Next == nil {
 		node.Next = prev
 		return node
@@ -19,9 +23,9 @@ func reverseListRecursive(node *ListNode, prev *ListNode, next *ListNode) *ListN
 	return reverseListRecursive(node, prev, node.Next)
 }
 
-func reverseListIterate(head *ListNode) *ListNode {
-	var prev *ListNode
-	var next *ListNode
+func reverseListIterate(head *structure.ListNode) *structure.ListNode {
+	var prev *structure.ListNode
+	var next *structure.ListNode
 
 	for {
 		if head.Next == nil {
