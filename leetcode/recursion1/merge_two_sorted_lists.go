@@ -1,15 +1,15 @@
 package recursion1
 
 import (
-	"algorithm/leetcode/structure"
+	"algorithm/leetcode/ds"
 )
 
-func mergeTwoLists(l1 *structure.ListNode, l2 *structure.ListNode) *structure.ListNode {
+func mergeTwoLists(l1 *ds.ListNode, l2 *ds.ListNode) *ds.ListNode {
 	// return mergeTwoListsIterate(l1, l2)
-	return mergeTwoListsRecursive(l1, l2, &structure.ListNode{})
+	return mergeTwoListsRecursive(l1, l2, &ds.ListNode{})
 }
 
-func mergeTwoListsRecursive(l1 *structure.ListNode, l2 *structure.ListNode, res *structure.ListNode) *structure.ListNode {
+func mergeTwoListsRecursive(l1 *ds.ListNode, l2 *ds.ListNode, res *ds.ListNode) *ds.ListNode {
 	if l1 == nil && l2 == nil {
 		return res
 	} else if l1 == nil {
@@ -24,8 +24,8 @@ func mergeTwoListsRecursive(l1 *structure.ListNode, l2 *structure.ListNode, res 
 	return res.Next
 }
 
-func mergeTwoListsIterate(l1 *structure.ListNode, l2 *structure.ListNode) *structure.ListNode {
-	res := &structure.ListNode{}
+func mergeTwoListsIterate(l1 *ds.ListNode, l2 *ds.ListNode) *ds.ListNode {
+	res := &ds.ListNode{}
 	head := res
 	for l1 != nil || l2 != nil {
 		if l1 == nil {

@@ -1,14 +1,14 @@
 package recursion1
 
 import (
-	"algorithm/leetcode/structure"
+	"algorithm/leetcode/ds"
 )
 
-func swapPairs(head *structure.ListNode) *structure.ListNode {
+func swapPairs(head *ds.ListNode) *ds.ListNode {
 	return recursiveSwapPairs(head)
 }
 
-func recursiveSwapPairs(curNode *structure.ListNode) *structure.ListNode {
+func recursiveSwapPairs(curNode *ds.ListNode) *ds.ListNode {
 	if curNode == nil || curNode.Next == nil {
 		return curNode
 	}

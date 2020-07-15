@@ -1,32 +1,32 @@
 package recursion1
 
 import (
-	"algorithm/leetcode/structure"
+	"algorithm/leetcode/ds"
 )
 
-func generateTrees(n int) []*structure.TreeNode {
+func generateTrees(n int) []*ds.TreeNode {
 	if n == 0 {
 		return nil
 	}
 	return generateTreeRecursive(1, n)
 }
 
-func generateTreeRecursive(start int, end int) []*structure.TreeNode {
-	var list []*structure.TreeNode
+func generateTreeRecursive(start int, end int) []*ds.TreeNode {
+	var list []*ds.TreeNode
 
 	if start > end {
 		list = append(list, nil)
 		return list
 	}
 
-	var left, right []*structure.TreeNode
+	var left, right []*ds.TreeNode
 	for i := start; i <= end; i++ {
 		left = generateTreeRecursive(start, i-1)
 		right = generateTreeRecursive(i+1, end)
 
 		for _, lnode := range left {
 			for _, rnode := range right {
-				root := &structure.TreeNode{
+				root := &ds.TreeNode{
 					Val: i,
 				}
 				root.Left = lnode

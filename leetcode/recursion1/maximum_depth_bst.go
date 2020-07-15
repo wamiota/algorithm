@@ -1,14 +1,12 @@
 package recursion1
 
-import (
-	"algorithm/leetcode/structure"
-)
+import "algorithm/leetcode/ds"
 
-func maxDepth(root *structure.TreeNode) int {
+func maxDepth(root *ds.TreeNode) int {
 	return maxDepthRecursive(root, 0)
 }
 
-func maxDepthRecursive(node *structure.TreeNode, depth int) int {
+func maxDepthRecursive(node *ds.TreeNode, depth int) int {
 	if node == nil {
 		return depth
 	}

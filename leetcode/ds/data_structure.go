@@ -1,4 +1,4 @@
-package structure
+package ds
 
 type ListNode struct {
 	Val  int

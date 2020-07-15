@@ -1,10 +1,10 @@
 package recursion1
 
 import (
-	"algorithm/leetcode/structure"
+	"algorithm/leetcode/ds"
 )
 
-func searchBST(root *structure.TreeNode, val int) *structure.TreeNode {
+func searchBST(root *ds.TreeNode, val int) *ds.TreeNode {
 	if root == nil {
 		return root
 	}
@@ -12,7 +12,7 @@ func searchBST(root *structure.TreeNode, val int) *structure.TreeNode {
 	return searchBSTRecursive(root, val)
 }
 
-func searchBSTRecursive(node *structure.TreeNode, val int) *structure.TreeNode {
+func searchBSTRecursive(node *ds.TreeNode, val int) *ds.TreeNode {
 	if node.Val == val {
 		return node
 	}
